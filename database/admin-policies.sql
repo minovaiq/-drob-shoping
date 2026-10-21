@@ -1,0 +1,12 @@
+create policy "admin self lookup" on public.admin_users for select to authenticated using (user_id=(select auth.uid()));
+create policy "admin manage categories" on public.categories for all to authenticated using (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid()))) with check (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid())));
+create policy "admin manage products" on public.products for all to authenticated using (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid()))) with check (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid())));
+create policy "admin manage product images" on public.product_images for all to authenticated using (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid()))) with check (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid())));
+create policy "admin manage delivery zones" on public.delivery_zones for all to authenticated using (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid()))) with check (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid())));
+create policy "admin read orders" on public.orders for select to authenticated using (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid())));
+create policy "admin update orders" on public.orders for update to authenticated using (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid()))) with check (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid())));
+create policy "admin read order items" on public.order_items for select to authenticated using (exists(select 1 from public.admin_users a where a.user_id=(select auth.uid())));
+grant select on public.admin_users to authenticated;
+grant select,insert,update,delete on public.categories,public.products,public.product_images,public.delivery_zones to authenticated;
+grant select,update on public.orders to authenticated;
+grant select on public.order_items to authenticated;
