@@ -1,0 +1,4 @@
+insert into storage.buckets(id,name,public,file_size_limit,allowed_mime_types) values('product-images','product-images',true,5242880,array['image/jpeg','image/png','image/webp']) on conflict(id) do nothing;
+create policy "public product image access" on storage.objects for select to anon,authenticated using(bucket_id='product-images');
+create policy "admins upload product images" on storage.objects for insert to authenticated with check(bucket_id='product-images' and exists(select 1 from public.admin_users a where a.user_id=(select auth.uid())));
+create policy "admins remove product images" on storage.objects for delete to authenticated using(bucket_id='product-images' and exists(select 1 from public.admin_users a where a.user_id=(select auth.uid())));
