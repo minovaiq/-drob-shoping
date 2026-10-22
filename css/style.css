@@ -200,3 +200,21 @@ body.product-landing #productOverlay .detail-dialog{max-width:950px;min-height:0
 .hero.hero-image-only .hero-slide-dots span{width:6px;height:6px;border-radius:50%;background:#ffffffa8;box-shadow:0 1px 4px #0003}
 .hero.hero-image-only .hero-slide-dots span.active{width:17px;border-radius:5px;background:#ff700f}
 @media(max-width:750px){.hero.hero-image-only .hero-featured-cards{height:145px!important}.hero.hero-image-only{border-radius:14px!important}}
+
+
+/* Design 01: immersive storefront with full-bleed product photography */
+.hero.hero-image-only.hero-immersive{margin:0 0 22px!important;padding:0!important;border-radius:0 0 24px 24px!important;background:#171d26!important;box-shadow:none!important}
+.hero.hero-immersive .hero-featured-cards{height:clamp(360px,48vw,540px)!important}
+.hero.hero-immersive .hero-slide-link{position:relative!important}
+.hero.hero-immersive .hero-slide-link::after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(5,10,20,.65));pointer-events:none}
+.hero.hero-immersive .hero-slide-image{object-fit:cover!important}
+.hero.hero-immersive .hero-slide-dots{bottom:22px!important;z-index:2}
+.hero.hero-immersive .hero-slide-dots span{height:4px;width:23px;border-radius:4px;background:#ffffff80}
+.hero.hero-immersive .hero-slide-dots span.active{width:30px;background:#fff}
+@media(max-width:750px){
+ .hero.hero-image-only.hero-immersive{margin:0 -12px 18px!important;border-radius:0 0 24px 24px!important;width:calc(100% + 24px)!important}
+ .hero.hero-immersive .hero-featured-cards{height:min(65vh,540px)!important;min-height:360px!important}
+ .hero.hero-immersive .hero-slide-dots{bottom:19px!important}
+ #categorySection .categories{display:flex!important;flex-wrap:nowrap!important;gap:12px!important;overflow-x:auto!important;scroll-snap-type:x proximity;scrollbar-width:none;padding:8px 4px 14px!important}
+ #categorySection .categories>*{flex:0 0 95px!important;scroll-snap-align:start}
+}
