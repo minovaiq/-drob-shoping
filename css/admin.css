@@ -203,3 +203,5 @@ body:has(#dashboard:not([hidden])) main{max-width:none;margin:0;padding:0 0 0 0}
 #newProductPanel form{margin-bottom:0!important}
 #productList>.item[hidden],#orderList>.item[hidden]{display:none!important}
 @media(max-width:650px){.admin-filters{gap:6px}.admin-filters input:not([type=checkbox]){flex-basis:100%}.admin-filters select{flex:1 1 140px}.admin-section-head button{font-size:10px}}
+
+#markets .item{display:flex;align-items:center;gap:10px;flex-wrap:wrap}#markets .item>div{flex:1 1 180px}#markets .item small{display:block;color:#7a8497;margin-top:3px}#markets .item select{width:auto;min-width:135px;max-width:220px}#markets h3:not(:first-child){margin-top:24px}#marketProductList{max-height:520px;overflow:auto;border:1px solid #e8edf5;border-radius:12px}#supplierOrderList{max-height:320px;overflow:auto}.integration-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px;border-bottom:1px solid #e9edf3}.integration-row small{display:block;color:#748198;overflow-wrap:anywhere}.integration-actions{display:flex;gap:6px;flex-wrap:wrap}
