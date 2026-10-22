@@ -29,10 +29,7 @@ async function init(){
   const price=node('div','landing-price');price.append(node('strong',null,money(p.price_iqd)));
   if(p.compare_price_iqd>p.price_iqd)price.append(node('del',null,money(p.compare_price_iqd)));
   details.append(price);
-  const button=node('a','landing-cta',p.stock>0?(cfg.cta_label||'اطلب الآن'):'نفدت الكمية');
-  if(p.stock>0)button.href='./index.html?product='+encodeURIComponent(p.id);else{button.removeAttribute('href');button.classList.add('disabled')}
-  details.append(button);
-  details.append(node('p','landing-note','يمكنك مراجعة تفاصيل المنتج والتوصيل قبل تأكيد الطلب.'));
+  details.append(node('p','landing-note','لمشاهدة تفاصيل المنتج والتسوق، يمكنك زيارة المتجر الرئيسي.'));
   section.append(gallery,details);root.replaceChildren(section);
  }catch(e){root.textContent='تعذر فتح صفحة المنتج. حاول مرة ثانية.';console.error(e)}
 }
