@@ -292,3 +292,11 @@ body.product-landing #productOverlay .detail-dialog{max-width:950px;min-height:0
 #productOverlay #detailAdd{min-height:46px!important;font-size:14px!important}
 #productOverlay .detail-close{top:10px!important;left:10px!important;width:32px!important;height:32px!important;padding:0!important;border-radius:9px!important;border:1px solid #e6eaf0!important;background:#ffffffed!important;color:#697589!important;font-size:15px!important;font-weight:500!important;box-shadow:0 2px 8px #10182812!important}
 @media(max-width:700px){#productOverlay{align-items:center!important;justify-content:center!important;padding:10px!important}#productOverlay .detail-dialog,.product-landing #productOverlay .detail-dialog{display:block!important;width:100%!important;max-width:480px!important;min-height:0!important;max-height:calc(100dvh - 20px)!important;margin:auto!important;border-radius:17px!important;overflow-y:auto!important}#productOverlay .detail-media{padding:10px 10px 0!important}#productOverlay .detail-image{height:clamp(160px,29dvh,245px)!important;min-height:0!important;max-height:none!important}#productOverlay .detail-body{padding:13px 15px 16px!important}#productOverlay .detail-body h2{font-size:19px!important;margin:7px 0 4px!important}#productOverlay .detail-price{font-size:24px!important}#productOverlay .detail-description{font-size:12px!important;padding:8px 0 4px!important}#productOverlay .detail-close{top:12px!important;left:12px!important}}
+
+/* Product image gallery */
+#productOverlay .detail-gallery-thumbs-wrap{width:100%;max-width:100%;overflow-x:auto;margin-top:10px;scrollbar-width:thin}
+#productOverlay .detail-gallery-thumbs{display:flex;gap:8px;padding:3px;min-width:max-content}
+#productOverlay .detail-gallery-thumb{width:58px;height:58px;flex:0 0 58px;padding:3px;border:2px solid transparent;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden}
+#productOverlay .detail-gallery-thumb.active{border-color:#ed701d}
+#productOverlay .detail-gallery-thumb img{width:100%;height:100%;object-fit:contain;border-radius:6px}
+@media(max-width:700px){#productOverlay .detail-gallery-thumb{width:48px;height:48px;flex-basis:48px}#productOverlay .detail-gallery-thumbs-wrap{margin-top:5px}}
