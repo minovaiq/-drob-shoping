@@ -176,3 +176,15 @@ body.product-landing #productOverlay .detail-dialog{max-width:950px;min-height:0
  .hero .hero-featured-card img{width:100%!important;height:auto!important;aspect-ratio:1/1!important;object-fit:cover!important;border-radius:12px!important}
  .hero .hero-trust{position:static!important;order:3!important;width:100%!important;display:none!important}
 }
+
+
+/* Compact, full-width, photos-only storefront banner */
+.hero.hero-image-only{display:block!important;width:100%!important;height:auto!important;min-height:0!important;margin:12px 0 18px!important;padding:12px!important;overflow:hidden!important;border-radius:18px!important}
+.hero.hero-image-only .heroVisual{display:block!important;position:static!important;width:100%!important;max-width:none!important;min-width:0!important;height:auto!important;margin:0!important;overflow:visible!important}
+.hero.hero-image-only .hero-featured{display:block!important;width:100%!important;max-width:none!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+.hero.hero-image-only .hero-featured-cards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;width:100%!important}
+.hero.hero-image-only .hero-featured-card{display:block!important;width:100%!important;min-width:0!important;height:auto!important;padding:0!important;margin:0!important;transform:none!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:12px!important;overflow:hidden!important}
+.hero.hero-image-only .hero-featured-card:nth-child(2){transform:none!important}
+.hero.hero-image-only .hero-featured-card img{display:block!important;width:100%!important;height:160px!important;aspect-ratio:auto!important;object-fit:cover!important;border-radius:12px!important;margin:0!important}
+.hero.hero-image-only .hero-photo-note,.hero.hero-image-only .hero-featured-sr{display:none!important}
+@media(max-width:750px){.hero.hero-image-only{margin:10px 0 14px!important;padding:8px!important;border-radius:14px!important}.hero.hero-image-only .hero-featured-cards{gap:7px!important}.hero.hero-image-only .hero-featured-card img{height:100px!important;border-radius:9px!important}}
