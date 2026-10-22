@@ -37,3 +37,8 @@
 .product-edit-dialog .modal-actions{display:flex;justify-content:flex-end;gap:9px;padding-top:12px;border-top:1px solid #eef1f6}
 .product-edit-dialog .modal-actions button{padding:8px 16px}
 @media(max-width:600px){.product-edit-dialog .modal-fields{grid-template-columns:1fr 1fr;gap:8px}.product-edit-dialog .modal-fields label:first-child,.product-edit-dialog .modal-full{grid-column:1/-1}#products .products-compact-table{min-width:720px}}
+
+/* Direct supplier product shortcut in image editor */
+#productEditDialog .supplier-product-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:9px 15px;border-radius:11px;font-weight:800;font-size:12px;text-decoration:none;background:#eef3ff;color:#2856a8;border:1px solid #dce6fa;white-space:nowrap}
+#productEditDialog .supplier-product-button:hover{background:#e1eaff}
+#productEditDialog .supplier-product-button[hidden]{display:none!important}
