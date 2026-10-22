@@ -146,3 +146,15 @@ body.product-landing #productOverlay .detail-dialog{max-width:950px;min-height:0
  .hero .hero-featured{width:100%;max-width:none}
  .hero .hero-featured-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
+
+
+/* Image-only hero collage */
+.hero-featured{padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.hero-featured-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.hero-featured-cards{gap:12px;align-items:center}
+.hero-featured-card{display:block!important;padding:0!important;border:0!important;border-radius:18px!important;background:transparent!important;box-shadow:none!important;overflow:hidden}
+.hero-featured-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;margin:0;background:#fff}
+.hero-featured-card:nth-child(2){transform:translateY(-10px)}
+.hero-featured-card:hover{transform:translateY(-4px)}
+.hero-photo-note{display:none!important}
+@media(max-width:750px){.hero-featured-cards{gap:9px}.hero-featured-card img{border-radius:14px}}
