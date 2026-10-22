@@ -185,3 +185,21 @@ body:has(#dashboard:not([hidden])) main{max-width:none;margin:0;padding:0 0 0 0}
  #dashboard .admin-sidebar{width:min(225px,78vw);padding:16px 10px}
  #dashboard .admin-sidebar nav button{padding:10px 11px;font-size:12px}
 }
+
+
+/* Compact operational tools */
+.admin-section-head{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:10px}
+#dashboard>section .admin-section-head h3{margin:0}
+.admin-section-head button{padding:7px 11px;font-size:11px}
+.admin-filters{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.admin-filters input:not([type=checkbox]){flex:1 1 220px;width:auto;margin:0;min-width:0}
+.admin-filters select{flex:0 1 160px;width:auto;margin:0}
+.filter-count{font-size:11px;color:#64738b;font-weight:800;white-space:nowrap}
+.admin-tools{margin:9px 0 13px;border:1px solid #e5e9f2;background:#fafbff;border-radius:10px;overflow:hidden}
+.admin-tools>summary{cursor:pointer;padding:10px 13px;font-size:12px;font-weight:800;color:#5346ac}
+.admin-tools[open]>summary{border-bottom:1px solid #e5e9f2}
+.admin-tools .bulk-images{margin:9px!important}
+#newProductPanel{padding:11px;background:#f8f9fd;border:1px solid #e8ecf3;border-radius:11px;margin-bottom:12px}
+#newProductPanel form{margin-bottom:0!important}
+#productList>.item[hidden],#orderList>.item[hidden]{display:none!important}
+@media(max-width:650px){.admin-filters{gap:6px}.admin-filters input:not([type=checkbox]){flex-basis:100%}.admin-filters select{flex:1 1 140px}.admin-section-head button{font-size:10px}}
