@@ -205,3 +205,43 @@ body:has(#dashboard:not([hidden])) main{max-width:none;margin:0;padding:0 0 0 0}
 @media(max-width:650px){.admin-filters{gap:6px}.admin-filters input:not([type=checkbox]){flex-basis:100%}.admin-filters select{flex:1 1 140px}.admin-section-head button{font-size:10px}}
 
 #markets .item{display:flex;align-items:center;gap:10px;flex-wrap:wrap}#markets .item>div{flex:1 1 180px}#markets .item small{display:block;color:#7a8497;margin-top:3px}#markets .item select{width:auto;min-width:135px;max-width:220px}#markets h3:not(:first-child){margin-top:24px}#marketProductList{max-height:520px;overflow:auto;border:1px solid #e8edf5;border-radius:12px}#supplierOrderList{max-height:320px;overflow:auto}.integration-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px;border-bottom:1px solid #e9edf3}.integration-row small{display:block;color:#748198;overflow-wrap:anywhere}.integration-actions{display:flex;gap:6px;flex-wrap:wrap}
+
+/* Admin UI refresh: readable hierarchy, consistent forms, mobile-friendly operations */
+:root{--purple:#6154d8;--ink:#202b43;--muted:#68758c;--border:#e4e9f2}
+body{background:#f5f7fb;color:var(--ink)}
+#dashboard{background:radial-gradient(circle at 90% 0%,#ecebff 0,transparent 29%),#f5f7fb}
+#dashboard .bar{background:#ffffffd9;border:1px solid #e9ecf5;border-radius:17px;padding:17px 20px;box-shadow:0 5px 25px #24324a07}
+#dashboard .bar h2{font-size:clamp(19px,2.3vw,25px);letter-spacing:-.5px}
+#dashboard .bar .admin-subtitle{font-size:12px;color:#748096}
+.workspace-pill{display:inline-flex;align-items:center;border-radius:99px;padding:6px 10px;color:#4c48a7;background:#f0efff;font-size:10px;font-weight:800;white-space:nowrap}
+#dashboard>section:not(#login):not(#dashboard){animation:adminReveal .18s ease-out}
+@keyframes adminReveal{from{opacity:.7;transform:translateY(4px)}to{opacity:1;transform:none}}
+#dashboard>section>h3{margin:22px 0 12px;font-size:16px}
+.admin-page-intro{padding:22px 24px;margin-bottom:18px;border:1px solid #e6e9f4;border-radius:17px;background:linear-gradient(110deg,#fff 55%,#f0efff)}
+.admin-page-intro h3{margin:5px 0;font-size:21px}
+.admin-page-intro p,.form-help{margin:3px 0 12px;color:#7b869b;font-size:12px;line-height:1.8}
+.admin-form-panel{background:#fff;border:1px solid #e5eaf3;border-radius:16px;padding:19px;margin:18px 0;box-shadow:0 4px 20px #263a5705}
+.admin-form-panel h3{font-size:15px;margin:0 0 4px}
+#finance form,#markets form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;align-items:end}
+#finance form input,#finance form select,#markets form input,#markets form select{margin:0;min-width:0;min-height:44px}
+#finance form button,#markets form button{min-height:44px}
+#financeSummary{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px}
+#financeSummary .stat-card{padding:18px;background:#fff;border:1px solid #e7eaf2;border-radius:15px;box-shadow:0 4px 20px #1c285908;display:block}
+#financeSummary .stat-card>strong{display:block;font-size:15px;margin-bottom:12px}
+#financeSummary .insight-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid #f0f2f7;font-size:11px;line-height:1.7}
+#financeSummary .stat-card p{background:#fff5e8;border-radius:8px;padding:9px;color:#a46416;font-size:11px}
+.admin-record-list{display:grid;gap:9px;margin:10px 0 22px}
+.admin-record-list .item,#markets .item{background:#fff;border:1px solid #e6eaf2;border-radius:12px;padding:12px 15px;margin:0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.admin-record-list .item>div{flex:1 1 230px}
+.admin-record-list .item small{display:block;color:#718097;margin-top:4px}
+#markets #marketList,#markets #supplierRegistry{display:grid;gap:8px}
+#markets #marketProductList{background:#fff;padding:8px;max-height:510px}
+#markets #marketProductList .item{margin-bottom:6px}
+#dashboard button,#dashboard input,#dashboard select,#dashboard textarea{transition:border-color .15s,box-shadow .15s,background .15s}
+#dashboard button:focus-visible,#dashboard input:focus-visible,#dashboard select:focus-visible{outline:3px solid #aaa0ff;outline-offset:2px}
+#dashboard button:hover:not(:disabled){filter:brightness(.97)}
+#dashboard .admin-sidebar nav button.active{background:linear-gradient(95deg,#7165e8,#5a50c9);box-shadow:0 3px 13px #16113d25}
+#message:not(:empty){position:fixed;left:22px;bottom:20px;z-index:250;max-width:min(410px,calc(100vw - 35px));background:#202b43;color:#fff;padding:12px 17px;border-radius:12px;box-shadow:0 10px 35px #10182d33;font-weight:700}
+@media(max-width:950px){#finance form,#markets form{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){#dashboard .bar{padding:13px;align-items:flex-start;flex-direction:column}#dashboard .bar .admin-toolbar{display:flex;gap:7px;flex-wrap:wrap}.workspace-pill{display:none}.admin-page-intro{padding:17px}.admin-form-panel{padding:13px}#finance form,#markets form{grid-template-columns:1fr}#financeSummary{grid-template-columns:1fr}#financeSummary .stat-card{padding:15px}#markets .item select{width:100%;max-width:none}#message:not(:empty){left:12px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){#dashboard>section:not(#login):not(#dashboard){animation:none}}
