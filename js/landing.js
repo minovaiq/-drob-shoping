@@ -12,7 +12,7 @@ async function init(){
   const pages=await get('product_landing_pages?select=template,headline,subtitle,cta_label,is_enabled&product_id=eq.'+encodeURIComponent(p.id)+'&is_enabled=eq.true&limit=1');
   const cfg=pages[0];if(!cfg){root.textContent='صفحة الهبوط غير مفعلة حالياً';return}
   const images=await get('product_images?select=image_url,sort_order&product_id=eq.'+encodeURIComponent(p.id)+'&order=sort_order.asc');
-  document.title=p.name+' | دروب شوبينج';
+  document.title=p.name+' | فلير';
   const section=node('section','landing-page theme-'+cfg.template);
   const gallery=node('div','landing-gallery');
   const photo=node('img','landing-main-image');photo.alt=p.name;photo.loading='eager';
@@ -21,7 +21,7 @@ async function init(){
   let i=0;photo.src=photos[0]||fallback;photo.onerror=()=>{photo.onerror=null;photo.src=fallback};gallery.append(photo);
   if(photos.length>1){const thumbs=node('div','landing-thumbs');photos.forEach((url,index)=>{const b=node('button');b.type='button';const im=node('img');im.src=url;im.alt='صورة '+(index+1);b.append(im);b.onclick=()=>{i=index;photo.src=url};thumbs.append(b)});gallery.append(thumbs)}
   const details=node('div','landing-details');
-  details.append(node('span','landing-kicker',cfg.template==='offer'?'عرض خاص':cfg.template==='story'?'اكتشف التفاصيل':'منتج من دروب شوبينج'));
+  details.append(node('span','landing-kicker',cfg.template==='offer'?'عرض خاص':cfg.template==='story'?'اكتشف التفاصيل':'منتج من فلير'));
   details.append(node('h1','landing-title',cfg.headline||p.name));
   if(cfg.headline&&cfg.headline!==p.name)details.append(node('h2','landing-product-name',p.name));
   const desc=cfg.subtitle||p.description||'اكتشف تفاصيل المنتج واطلبه بسهولة.';
