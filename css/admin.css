@@ -165,3 +165,23 @@ body:has(#dashboard:not([hidden])) main{max-width:none;margin:0;padding:0 0 0 0}
  #dashboard .bar{margin-bottom:13px}
 }
 @media(min-width:851px){#dashboard .sidebar-backdrop{display:none!important}}
+
+
+/* Narrow sidebar refinement */
+@media(min-width:851px){
+ #dashboard{padding-right:190px}
+ #dashboard .admin-sidebar{width:178px;padding:15px 8px 11px}
+ .sidebar-brand{gap:7px;padding:4px 4px 15px}
+ .sidebar-logo{flex-basis:32px;height:32px;border-radius:9px;font-size:19px}
+ .sidebar-brand strong{font-size:12px}
+ .sidebar-brand small{font-size:9px}
+ .sidebar-label{padding:15px 9px 6px;font-size:9px}
+ #dashboard .admin-sidebar nav button{gap:8px;padding:9px 9px;font-size:11px;border-radius:8px}
+ .nav-icon{width:17px;font-size:16px}
+ .sidebar-footer{padding:12px 8px 2px;gap:7px}
+ .sidebar-footer a{font-size:11px}
+}
+@media(max-width:850px){
+ #dashboard .admin-sidebar{width:min(225px,78vw);padding:16px 10px}
+ #dashboard .admin-sidebar nav button{padding:10px 11px;font-size:12px}
+}
