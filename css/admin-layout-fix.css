@@ -1,0 +1,38 @@
+/* Layout repair — one content column beside a fixed navigation rail */
+#dashboard{display:block!important;min-width:0;min-height:100vh;padding:18px 20px 30px 218px!important;overflow:visible}
+#dashboard[hidden]{display:none!important}
+#dashboard>.bar,#dashboard>section{position:relative;float:none;clear:none;min-width:0;width:100%;max-width:100%;box-sizing:border-box}
+#dashboard>.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px!important;padding:14px 17px!important}
+#dashboard>section{display:block;margin:0 0 15px!important;padding:18px!important;overflow-wrap:anywhere}
+#dashboard>section[hidden]{display:none!important}
+#dashboard .admin-sidebar{position:fixed!important;right:0!important;left:auto!important;top:0!important;bottom:0!important;width:198px!important;max-width:198px;display:flex!important;flex-direction:column;overflow-y:auto;overflow-x:hidden;z-index:100}
+#dashboard .admin-sidebar nav{display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important;gap:4px!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#dashboard .admin-sidebar nav button{width:100%!important;flex:0 0 auto;min-height:37px;white-space:normal!important;text-align:right}
+#dashboard .admin-sidebar .sidebar-brand{flex-shrink:0}
+#dashboard .admin-sidebar .sidebar-footer{margin-top:auto}
+#dashboard>section form{min-width:0}
+#dashboard>section form>*{min-width:0}
+#dashboard #finance form,#dashboard #markets form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:end;margin:0;padding:0;background:transparent;border:0}
+#dashboard #finance form button,#dashboard #markets form button{align-self:stretch}
+#dashboard #financeSummary{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,275px),1fr));gap:10px}
+#dashboard .admin-record-list .item,#dashboard #markets .item{max-width:100%}
+#dashboard #marketProductList{overflow-x:hidden}
+#dashboard #marketProductList .item{display:grid;grid-template-columns:minmax(160px,1fr) minmax(100px,150px) minmax(100px,150px) auto;align-items:center}
+#dashboard #marketProductList .item select{min-width:0;width:100%;max-width:100%}
+@media(max-width:850px){
+ #dashboard{padding:70px 12px 24px!important}
+ #dashboard .admin-sidebar{width:min(270px,83vw)!important;max-width:83vw;transform:translateX(110%);z-index:202}
+ #dashboard.sidebar-open .admin-sidebar{transform:translateX(0)}
+ #dashboard .sidebar-toggle{display:grid!important}
+ #dashboard>.bar{padding:12px!important}
+ #dashboard>section{padding:13px!important}
+ #dashboard #marketProductList .item{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #dashboard #marketProductList .item>div{grid-column:1/-1}
+}
+@media(max-width:600px){
+ #dashboard #finance form,#dashboard #markets form{grid-template-columns:minmax(0,1fr)}
+ #dashboard #marketProductList .item{grid-template-columns:minmax(0,1fr)}
+ #dashboard #marketProductList .item>div{grid-column:auto}
+ #dashboard .bar{flex-wrap:wrap}
+ #dashboard .admin-toolbar{width:100%;display:flex;flex-wrap:wrap}
+}
