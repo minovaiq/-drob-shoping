@@ -40,19 +40,29 @@ westernObserver.observe(document.body,{subtree:true,childList:true,characterData
 function showOrderSuccess(orderId){$('successOrderId').textContent='رقم الطلب: '+String(orderId).slice(0,8);$('orderSuccess').classList.remove('hidden');document.body.style.overflow='hidden';$('successDone').focus()}
 $('successDone').onclick=()=>{$('orderSuccess').classList.add('hidden');document.body.style.overflow=''};
 
+let heroSlideTimer=null;
 function renderHeroFeatured(){
  const holder=$('heroFeaturedCards');if(!holder)return;
  const available=products.filter(p=>p.stock>0);
  const best=available.filter(p=>p.category==='الأكثر مبيعاً');
- const chosen=(best.length?best:available).slice(0,3);
+ const chosen=(best.length?best:available).slice(0,8);
  $('heroFeaturedTitle').textContent=best.length?'الأكثر مبيعاً':'منتجات مميزة';
- $('heroFeatured').setAttribute('aria-label',$('heroFeaturedTitle').textContent);
- $('heroPhotoNote').hidden=chosen.every(p=>!!p.image);
- holder.replaceChildren(...chosen.map(p=>{
-   const card=document.createElement('button');card.type='button';card.className='hero-featured-card';card.setAttribute('aria-label','عرض '+p.name);
-   const img=document.createElement('img');setProductPhoto(img,p);img.loading='eager';
-   const label=document.createElement('span');label.className='hero-featured-name';label.textContent=p.name;
-   const price=document.createElement('strong');price.textContent=money(p.price);
-   card.append(img);card.onclick=()=>openProduct(p);return card;
- }));
+ if(heroSlideTimer){clearInterval(heroSlideTimer);heroSlideTimer=null}
+ if(!chosen.length){holder.replaceChildren();return}
+ let current=0;
+ const photo=document.createElement('img');photo.className='hero-slide-image';photo.alt='';photo.loading='eager';photo.decoding='async';
+ const link=document.createElement('button');link.type='button';link.className='hero-slide-link';link.setAttribute('aria-label','عرض المنتج');link.append(photo);
+ const dots=document.createElement('div');dots.className='hero-slide-dots';dots.setAttribute('aria-hidden','true');
+ const indicators=chosen.map(()=>{const dot=document.createElement('span');dots.append(dot);return dot});
+ holder.replaceChildren(link,dots);
+ function show(index){
+  current=(index+chosen.length)%chosen.length;
+  const p=chosen[current];setProductPhoto(photo,p);
+  link.setAttribute('aria-label','عرض '+p.name);link.onclick=()=>openProduct(p);
+  indicators.forEach((dot,i)=>dot.classList.toggle('active',i===current));
+ }
+ show(0);
+ if(chosen.length>1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  heroSlideTimer=setInterval(()=>{if(!document.hidden)show(current+1)},2000);
+ }
 }
