@@ -158,3 +158,21 @@ body.product-landing #productOverlay .detail-dialog{max-width:950px;min-height:0
 .hero-featured-card:hover{transform:translateY(-4px)}
 .hero-photo-note{display:none!important}
 @media(max-width:750px){.hero-featured-cards{gap:9px}.hero-featured-card img{border-radius:14px}}
+
+
+/* Final mobile hero layout: full-width headline followed by a tidy product image strip */
+@media(max-width:750px){
+ .hero{display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:16px!important;padding:24px 18px!important;min-height:0!important;height:auto!important;overflow:hidden!important}
+ .hero .hero-copy{width:100%!important;max-width:100%!important;flex:none!important;text-align:right!important;order:1!important}
+ .hero .hero-copy h1{font-size:clamp(28px,8vw,39px)!important;line-height:1.32!important;max-width:none!important;margin:10px 0!important}
+ .hero .hero-copy h1 br{display:none}
+ .hero .hero-copy p{font-size:12px!important;line-height:1.9!important;max-width:100%!important;margin:8px 0 15px!important}
+ .hero .hero-copy .cta{display:inline-flex!important;width:auto!important;min-width:0!important;padding:10px 21px!important;font-size:13px!important;white-space:nowrap!important}
+ .hero .heroVisual{display:block!important;position:static!important;width:100%!important;max-width:100%!important;min-width:0!important;height:auto!important;margin:0!important;order:2!important;overflow:hidden!important}
+ .hero .hero-featured{width:100%!important;max-width:100%!important;overflow:hidden!important}
+ .hero .hero-featured-cards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:9px!important;align-items:center!important}
+ .hero .hero-featured-card{min-width:0!important;width:100%!important;transform:none!important;border-radius:12px!important}
+ .hero .hero-featured-card:nth-child(2){transform:none!important}
+ .hero .hero-featured-card img{width:100%!important;height:auto!important;aspect-ratio:1/1!important;object-fit:cover!important;border-radius:12px!important}
+ .hero .hero-trust{position:static!important;order:3!important;width:100%!important;display:none!important}
+}
