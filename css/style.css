@@ -136,3 +136,13 @@ body.product-landing #productOverlay .detail-dialog{max-width:950px;min-height:0
 .hero-photo-note{font-size:9px;color:#a1a0a8;text-align:center;margin:12px 0 0}.hero-photo-note[hidden]{display:none}
 .heroVisual .hero-showcase{display:none}
 @media(max-width:650px){.hero-featured{padding:12px;border-radius:16px}.hero-featured-cards{gap:7px}.hero-featured-card{padding:6px;border-radius:10px}.hero-featured-card img{margin-bottom:5px}.hero-featured-name{font-size:9px;min-height:29px}.hero-featured-card strong{font-size:10px}.hero-featured-heading strong{font-size:13px}}
+
+
+/* Keep featured product photography visible on mobile: older breakpoints hid .heroVisual */
+.hero .heroVisual{display:flex!important;visibility:visible;width:46%;min-width:0;height:auto;align-items:center;justify-content:center;flex-shrink:0}
+.hero .hero-featured{width:100%;max-width:520px}
+@media(max-width:750px){
+ .hero .heroVisual{display:flex!important;width:100%;max-width:100%;margin:12px 0 0;height:auto;order:2}
+ .hero .hero-featured{width:100%;max-width:none}
+ .hero .hero-featured-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
