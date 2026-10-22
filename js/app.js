@@ -40,8 +40,9 @@ function showOrderSuccess(orderId){$('successOrderId').textContent='رقم ال�
 $('successDone').onclick=()=>{$('orderSuccess').classList.add('hidden');document.body.style.overflow=''};
 
 let heroSlideTimer=null;
-function renderHeroFeatured(){
+async function renderHeroFeatured(){
  const holder=$('heroFeaturedCards');if(!holder)return;
+ try{const response=await fetch(STORE_API+'/store_banners?select=id,title,image_url,link_url&is_active=eq.true&order=sort_order.asc,created_at.desc',{headers:{apikey:STORE_KEY}});if(response.ok){const banners=await response.json();if(banners.length){if(heroSlideTimer){clearInterval(heroSlideTimer);heroSlideTimer=null}let current=0;const photo=document.createElement('img');photo.className='hero-slide-image';photo.alt='';photo.loading='eager';const link=document.createElement('a');link.className='hero-slide-link';link.append(photo);const dots=document.createElement('div');dots.className='hero-slide-dots';dots.setAttribute('aria-hidden','true');const indicators=banners.map(()=>{const dot=document.createElement('span');dots.append(dot);return dot});holder.replaceChildren(link,dots);function show(index){current=(index+banners.length)%banners.length;const b=banners[current];photo.src=b.image_url;photo.alt=b.title||'بنر دروب شوبينج';if(b.link_url){try{const u=new URL(b.link_url,location.href);if(['http:','https:'].includes(u.protocol)){link.href=u.href;link.style.pointerEvents='auto'}else{link.removeAttribute('href');link.style.pointerEvents='none'}}catch{link.removeAttribute('href');link.style.pointerEvents='none'}}else{link.removeAttribute('href');link.style.pointerEvents='none'}indicators.forEach((dot,i)=>dot.classList.toggle('active',i===current))}show(0);if(banners.length>1&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches)heroSlideTimer=setInterval(()=>{if(!document.hidden)show(current+1)},4000);return}}}catch(err){console.warn('Banner lookup failed; showing product images',err)}
  const available=products.filter(p=>p.stock>0);
  const best=available.filter(p=>p.category==='الأكثر مبيعاً');
  const chosen=(best.length?best:available).slice(0,8);
