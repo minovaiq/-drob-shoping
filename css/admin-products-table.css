@@ -1,0 +1,39 @@
+/* Dense products inventory grid and focused edit dialog */
+#products .products-table-wrap{width:100%;overflow:auto;border:1px solid #e5eaf1;border-radius:12px;background:#fff}
+#products .products-compact-table{width:100%;border-collapse:collapse;table-layout:auto;min-width:770px;font-size:11px}
+#products .products-compact-table th{background:#f3f5fa;color:#5c687d;text-align:right;font-weight:800;padding:10px 9px;white-space:nowrap;position:sticky;top:0;z-index:1}
+#products .products-compact-table td{border-top:1px solid #eef1f6;padding:5px 9px;vertical-align:middle;height:52px}
+#products .products-compact-table tbody tr:hover{background:#f8f9ff}
+#products .products-compact-table .image-cell{width:53px}
+#products .compact-product-image,#products .compact-image-empty{display:grid;place-items:center;width:39px;height:39px;border-radius:7px;object-fit:cover;background:#f1f3f9;color:#9ca8ba;font-size:20px}
+#products .name-cell{min-width:180px;max-width:300px}
+#products .product-name-cell{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:290px}
+#products .name-cell small{display:block;color:#8a94a8;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#products .money-cell{font-variant-numeric:tabular-nums;white-space:nowrap}
+#products .profit-positive{color:#16815e;font-weight:800}
+#products .profit-negative{color:#c0394a;font-weight:800}
+#products .supplier-cell{max-width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#products .stock-cell{font-weight:800}
+#products .compact-edit-btn{padding:6px 12px!important;font-size:10px;border-radius:8px;white-space:nowrap}
+.product-edit-dialog{position:fixed;inset:0;margin:auto;width:min(590px,calc(100vw - 24px));max-height:min(88dvh,780px);overflow:auto;padding:0;border:1px solid #e2e7f0;border-radius:16px;box-shadow:0 30px 90px #10182c55;color:#25314b;background:white;font-family:inherit}
+.product-edit-dialog::backdrop{background:#111b31a1;backdrop-filter:blur(3px)}
+.product-edit-dialog .modal-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 17px;border-bottom:1px solid #edf0f5;position:sticky;top:0;background:#fff;z-index:2}
+.product-edit-dialog .modal-heading h3{font-size:15px!important;margin:0!important}
+.product-edit-dialog .modal-heading button{padding:5px 10px}
+#dashboard .product-edit-dialog form{background:white;border:0;border-radius:0;padding:15px 17px;margin:0}
+.product-edit-dialog .modal-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 12px}
+.product-edit-dialog label{display:block;margin:0;font-size:11px;font-weight:800;color:#5e6b80}
+.product-edit-dialog label input,.product-edit-dialog label select,.product-edit-dialog label textarea{display:block;width:100%;margin:5px 0 0!important;font-size:13px;min-height:39px;padding:8px 10px}
+.product-edit-dialog .modal-full{grid-column:1/-1}
+.product-edit-dialog .edit-profit-preview{background:#edf9f2;color:#187a4e;border-radius:9px;padding:8px 11px;margin:12px 0;font-size:12px;font-weight:900}
+.product-edit-dialog .edit-profit-preview.profit-negative{background:#fff1f2;color:#ba2e47}
+.product-edit-dialog .modal-images{padding:9px 0;border-top:1px solid #eef1f6}
+.product-edit-dialog #editImageList{display:flex;flex-wrap:wrap;gap:7px}
+.product-edit-dialog .modal-image-tile{position:relative}
+.product-edit-dialog .modal-image-tile img{width:56px;height:56px;border-radius:8px;object-fit:cover}
+.product-edit-dialog .modal-image-tile button{position:absolute;left:-4px;top:-4px;border-radius:50%;width:21px;height:21px;padding:0;background:#c33d50;color:white}
+.product-edit-dialog .image-upload-button{display:inline-block;margin-top:9px;padding:8px 12px;border:1px dashed #aaa5e5;border-radius:9px;color:#564ac4;cursor:pointer}
+.product-edit-dialog .image-upload-button input{display:none}
+.product-edit-dialog .modal-actions{display:flex;justify-content:flex-end;gap:9px;padding-top:12px;border-top:1px solid #eef1f6}
+.product-edit-dialog .modal-actions button{padding:8px 16px}
+@media(max-width:600px){.product-edit-dialog .modal-fields{grid-template-columns:1fr 1fr;gap:8px}.product-edit-dialog .modal-fields label:first-child,.product-edit-dialog .modal-full{grid-column:1/-1}#products .products-compact-table{min-width:720px}}
