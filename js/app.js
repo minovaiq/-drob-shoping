@@ -53,6 +53,6 @@ function renderHeroFeatured(){
    const img=document.createElement('img');setProductPhoto(img,p);img.loading='eager';
    const label=document.createElement('span');label.className='hero-featured-name';label.textContent=p.name;
    const price=document.createElement('strong');price.textContent=money(p.price);
-   card.append(img,label,price);card.onclick=()=>openProduct(p);return card;
+   card.append(img);card.onclick=()=>openProduct(p);return card;
  }));
 }
