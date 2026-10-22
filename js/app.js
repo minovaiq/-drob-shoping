@@ -24,7 +24,6 @@ $('closeProduct').onclick=closeProduct;$('productOverlay').onclick=e=>{if(e.targ
 
 function productDirectUrl(p){const u=new URL(location.origin+location.pathname);u.searchParams.set('product',p.id);return u.href}
 $('detailShare').onclick=async()=>{if(!currentDetail)return;const link=productDirectUrl(currentDetail);try{await navigator.clipboard.writeText(link);notify('✓ تم نسخ رابط المنتج')}catch{prompt('انسخ رابط المنتج',link)}};
-$('detailBuy').onclick=()=>{if(!currentDetail||currentDetail.stock<=0)return;$('quickOrderForm').hidden=false;$('quickError').hidden=true;refreshQuickTotal();$('quickOrderForm').scrollIntoView({behavior:'smooth',block:'nearest'});};
 $('quickCancel').onclick=()=>{$('quickOrderForm').hidden=true};
 function refreshQuickTotal(){if(!currentDetail)return;const zone=deliveryZones.find(z=>z.id===$('quickZone').value);$('quickTotal').textContent='المنتجات: '+money(currentDetail.price*detailQuantity)+' · التوصيل: '+(zone?money(zone.fee_iqd):'حدد المنطقة')+' · الإجمالي: '+(zone?money(currentDetail.price*detailQuantity+zone.fee_iqd):'—')}
 $('quickZone').onchange=refreshQuickTotal;
