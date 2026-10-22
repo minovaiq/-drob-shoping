@@ -188,3 +188,15 @@ body.product-landing #productOverlay .detail-dialog{max-width:950px;min-height:0
 .hero.hero-image-only .hero-featured-card img{display:block!important;width:100%!important;height:160px!important;aspect-ratio:auto!important;object-fit:cover!important;border-radius:12px!important;margin:0!important}
 .hero.hero-image-only .hero-photo-note,.hero.hero-image-only .hero-featured-sr{display:none!important}
 @media(max-width:750px){.hero.hero-image-only{margin:10px 0 14px!important;padding:8px!important;border-radius:14px!important}.hero.hero-image-only .hero-featured-cards{gap:7px!important}.hero.hero-image-only .hero-featured-card img{height:100px!important;border-radius:9px!important}}
+
+
+/* One full-width rotating product image in a compact banner */
+.hero.hero-image-only{padding:0!important;background:#f7eee6!important;overflow:hidden!important;position:relative!important}
+.hero.hero-image-only .heroVisual,.hero.hero-image-only .hero-featured{display:block!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;overflow:hidden!important}
+.hero.hero-image-only .hero-featured-cards{display:block!important;position:relative!important;width:100%!important;height:220px!important}
+.hero.hero-image-only .hero-slide-link{display:block!important;width:100%!important;height:100%!important;padding:0!important;border:0!important;background:transparent!important;cursor:pointer}
+.hero.hero-image-only .hero-slide-image{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:0!important}
+.hero.hero-image-only .hero-slide-dots{position:absolute;bottom:12px;left:0;right:0;display:flex;gap:6px;justify-content:center;pointer-events:none}
+.hero.hero-image-only .hero-slide-dots span{width:6px;height:6px;border-radius:50%;background:#ffffffa8;box-shadow:0 1px 4px #0003}
+.hero.hero-image-only .hero-slide-dots span.active{width:17px;border-radius:5px;background:#ff700f}
+@media(max-width:750px){.hero.hero-image-only .hero-featured-cards{height:145px!important}.hero.hero-image-only{border-radius:14px!important}}
