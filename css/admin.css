@@ -132,3 +132,36 @@ label{margin:7px 0}
  .item{font-size:11px}
  input:not([type=checkbox]),select{font-size:16px}
 }
+
+
+/* Right sidebar admin layout */
+body:has(#dashboard:not([hidden]))>header{display:none}
+body:has(#dashboard:not([hidden])) main{max-width:none;margin:0;padding:0 0 0 0}
+#dashboard{padding:22px 268px 24px 20px;min-height:100dvh}
+#dashboard .admin-sidebar{position:fixed;right:0;top:0;bottom:0;width:246px;z-index:100;display:flex;flex-direction:column;background:#18233d;color:#fff;padding:22px 13px 15px;box-shadow:-4px 0 22px #0d1a2b12;overflow-y:auto}
+.sidebar-brand{display:flex;align-items:center;gap:10px;padding:5px 7px 22px;border-bottom:1px solid #ffffff19}
+.sidebar-logo{display:grid;place-items:center;flex:0 0 41px;height:41px;border-radius:12px;background:#7061e8;color:#fff;font-size:24px;font-weight:900}
+.sidebar-brand strong{display:block;font-size:15px;color:#fff}
+.sidebar-brand small{display:block;color:#a7b4d0;font-size:10px;margin-top:3px}
+.sidebar-label{font-size:10px;color:#91a2c2;font-weight:800;padding:22px 13px 9px}
+#dashboard .admin-sidebar nav{display:flex;flex-direction:column;gap:4px;padding:0;margin:0;background:transparent;border:0;border-radius:0;box-shadow:none;overflow:visible}
+#dashboard .admin-sidebar nav button{display:flex;align-items:center;text-align:right;gap:11px;width:100%;padding:11px 13px;color:#bdc8df;background:transparent;border:0;border-radius:10px;font-size:12px;white-space:nowrap}
+#dashboard .admin-sidebar nav button:hover:not(.active){background:#ffffff13;color:#fff}
+#dashboard .admin-sidebar nav button.active{background:#6758da;color:#fff;box-shadow:none}
+.nav-icon{display:grid;place-items:center;width:21px;font-size:19px;line-height:1}
+.sidebar-footer{margin-top:auto;padding:16px 12px 2px;border-top:1px solid #ffffff1c;display:flex;flex-direction:column;gap:11px}
+.sidebar-footer a{color:#fff;text-decoration:none;font-weight:800;font-size:12px}
+.sidebar-footer span{color:#8998b6;font-size:10px}
+.sidebar-toggle,.sidebar-close{display:none}
+#dashboard .bar{margin:0 0 16px}
+#dashboard>section{max-width:100%}
+@media(max-width:850px){
+ #dashboard{padding:68px 12px 20px}
+ #dashboard .admin-sidebar{transform:translateX(105%);transition:transform .23s ease;width:min(285px,83vw);z-index:202}
+ #dashboard.sidebar-open .admin-sidebar{transform:translateX(0)}
+ .sidebar-toggle{display:grid;place-items:center;position:fixed;top:13px;right:13px;width:42px;height:42px;padding:0;border-radius:11px;z-index:105;background:#5142c6;color:#fff;box-shadow:0 4px 16px #0002;font-size:21px}
+ .sidebar-close{display:grid;place-items:center;margin-right:auto;width:30px;height:30px;padding:0;background:#ffffff17;color:#fff;border-radius:8px;font-size:13px}
+ #dashboard .sidebar-backdrop:not([hidden]){position:fixed;inset:0;z-index:201;background:#10182885;display:block}
+ #dashboard .bar{margin-bottom:13px}
+}
+@media(min-width:851px){#dashboard .sidebar-backdrop{display:none!important}}
