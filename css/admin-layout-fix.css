@@ -1,5 +1,5 @@
 /* Layout repair — one content column beside a fixed navigation rail */
-#dashboard{display:block!important;min-width:0;min-height:100vh;padding:18px 20px 30px 218px!important;overflow:visible}
+#dashboard{display:block!important;min-width:0;min-height:100vh;padding:18px 218px 30px 20px!important;overflow:visible}
 #dashboard[hidden]{display:none!important}
 #dashboard>.bar,#dashboard>section{position:relative;float:none;clear:none;min-width:0;width:100%;max-width:100%;box-sizing:border-box}
 #dashboard>.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px!important;padding:14px 17px!important}
@@ -35,4 +35,15 @@
  #dashboard #marketProductList .item>div{grid-column:auto}
  #dashboard .bar{flex-wrap:wrap}
  #dashboard .admin-toolbar{width:100%;display:flex;flex-wrap:wrap}
+}
+
+/* RTL workspace: reserve the navigation rail on the RIGHT, never behind panels. */
+@media(min-width:851px){
+ main:has(> #dashboard:not([hidden])){max-width:none!important;width:100%!important;margin:0!important;padding:0!important}
+ #dashboard:not([hidden]){width:100%!important;max-width:none!important;margin:0!important;padding:18px 218px 30px 20px!important;box-sizing:border-box!important}
+ #dashboard:not([hidden])>.bar,#dashboard:not([hidden])>section{width:100%!important;max-width:100%!important;min-width:0!important;margin-right:0!important;margin-left:0!important}
+}
+@media(max-width:850px){
+ main:has(> #dashboard:not([hidden])){max-width:100%!important;width:100%!important;padding:0!important;margin:0!important}
+ #dashboard:not([hidden]){width:100%!important;padding:70px 12px 24px!important}
 }
