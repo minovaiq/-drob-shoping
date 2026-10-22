@@ -335,3 +335,15 @@ body.product-landing #productOverlay .detail-dialog{max-width:950px;min-height:0
 #overlay .checkout .cta:hover{background:#d95d14}
 #overlay .hint{margin-top:10px;font-size:11px;color:#8a94a3}
 @media(max-width:650px){#overlay .drawer{width:min(100%,420px);padding:0 16px 20px}#overlay .drawerHead{margin:0 -16px;padding:15px 16px}#overlay .drawerHead h2{font-size:17px}#overlay .cartItem{padding:12px 0}#overlay .cart-product-label strong{font-size:12px}}
+
+/* Unified quiet buttons, except add-to-cart actions */
+button:not(.add):not(#detailAdd):not(.quick-submit):not(.cta):not([type='submit']):not(#cartButton),
+a.cta:not(.add){border:1px solid #e5e7eb;border-radius:10px;background:#fff;color:#344054;box-shadow:none;font-weight:700;transition:background .15s,border-color .15s,color .15s}
+button:not(.add):not(#detailAdd):not(.quick-submit):not(.cta):not([type='submit']):not(#cartButton):hover{background:#f8fafc;border-color:#cbd5e1;transform:none}
+button:not(.add):not(#detailAdd):not(.quick-submit):not(.cta):not([type='submit']):not(#cartButton):focus-visible{outline:2px solid #94a3b8;outline-offset:2px}
+/* Preserve prominent purchase actions, while matching their geometry */
+button.quick-submit,button.cta,button[type='submit']:not(.add){border-radius:10px;box-shadow:none}
+/* Preserve compact quantity controls */
+#overlay .cart-stepper button,#productOverlay .quantity-stepper button{border-radius:0}
+/* Preserve the subtle close buttons */
+#overlay #close,#productOverlay .detail-close{border-radius:9px}
