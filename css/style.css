@@ -347,3 +347,12 @@ button.quick-submit,button.cta,button[type='submit']:not(.add){border-radius:10p
 #overlay .cart-stepper button,#productOverlay .quantity-stepper button{border-radius:0}
 /* Preserve the subtle close buttons */
 #overlay #close,#productOverlay .detail-close{border-radius:9px}
+
+/* Reliable two-banner fallback: rotates even if the API script fails. */
+#heroFeaturedCards:has(>.hero-static-slide-2){position:relative!important;display:block!important;overflow:hidden!important}
+#heroFeaturedCards>.hero-static-slide-2,#heroFeaturedCards:has(>.hero-static-slide-2)>.hero-slide-link:first-child{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:block!important}
+#heroFeaturedCards:has(>.hero-static-slide-2)>.hero-slide-link:first-child{animation:bannerFirst 9s infinite!important}
+#heroFeaturedCards>.hero-static-slide-2{animation:bannerSecond 9s infinite!important}
+@keyframes bannerFirst{0%,44%{opacity:1;visibility:visible}50%,94%{opacity:0;visibility:hidden}100%{opacity:1;visibility:visible}}
+@keyframes bannerSecond{0%,44%{opacity:0;visibility:hidden}50%,94%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){#heroFeaturedCards:has(>.hero-static-slide-2)>.hero-slide-link:first-child{animation:none!important}#heroFeaturedCards>.hero-static-slide-2{animation:none!important;display:none!important}}
