@@ -17,7 +17,7 @@
    function show(i){
     current=i%banners.length;const b=banners[current];
     img.src=b.image_url;img.alt=b.title||'بنر فلير ستور';
-    if(b.link_url){try{const url=new URL(b.link_url,location.href);if(['https:','http:'].includes(url.protocol)){link.href=url.href;link.style.pointerEvents='auto'}else{link.removeAttribute('href');link.style.pointerEvents='none'}}catch{link.removeAttribute('href');link.style.pointerEvents='none'}}else{link.removeAttribute('href');link.style.pointerEvents='none'}
+    if(b.link_url){try{const url=new URL(b.link_url,location.href);if(['https:','http:'].includes(url.protocol)){link.href=url.searchParams.has('product')?(location.origin+location.pathname+'?product='+encodeURIComponent(url.searchParams.get('product'))):url.href;link.style.pointerEvents='auto'}else{link.removeAttribute('href');link.style.pointerEvents='none'}}catch{link.removeAttribute('href');link.style.pointerEvents='none'}}else{link.removeAttribute('href');link.style.pointerEvents='none'}
     markers.forEach((dot,j)=>dot.classList.toggle('active',j===current));
    }
    img.onerror=()=>{console.error('Storefront banner image failed:',img.src);img.style.display='none'};img.onload=()=>{console.info('Banner image loaded',img.naturalWidth,img.naturalHeight)};
