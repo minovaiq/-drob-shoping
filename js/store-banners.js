@@ -22,7 +22,7 @@
    }
    img.onerror=()=>{console.error('Storefront banner image failed:',img.src);img.style.display='none'};img.onload=()=>{console.info('Banner image loaded',img.naturalWidth,img.naturalHeight)};
    show(0);
-   if(banners.length>1&&!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{if(!document.hidden&&holder.contains(link))show((current+1)%banners.length)},4500);
+   if(banners.length>1){setInterval(()=>{if(!document.hidden&&holder.contains(link))show((current+1)%banners.length)},4500);dots.style.pointerEvents='auto';markers.forEach((dot,i)=>{dot.style.cursor='pointer';dot.addEventListener('click',()=>show(i))})}
   }catch(err){console.error('Storefront banner fetch failed:',err);console.warn('Keeping server-rendered banner fallback')}
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(load,700),{once:true});
