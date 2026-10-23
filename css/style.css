@@ -462,3 +462,6 @@ body{font-size:var(--store-text);line-height:1.6}
  footer.store-footer .footer-col a,footer.store-footer #storeContact p{font-size:12px!important;line-height:1.8}
 }
 @media(max-width:370px){.grid .info{padding:8px 7px}.grid .info h3{font-size:12px!important}.grid .product .add,.grid .product .view-details{font-size:11px!important}}
+
+/* Compact latest-sort filter on phones */
+@media(max-width:600px){#products .catalog-tools{gap:8px;min-height:0;margin:0 0 10px;flex-wrap:nowrap}#products .catalog-tools>span{font-size:11px;max-width:55%;line-height:1.4}#products .catalog-actions{gap:0;flex:0 0 auto}#products .catalog-actions label{display:none}#products #sortProducts{width:auto!important;min-width:85px!important;max-width:115px!important;min-height:30px!important;height:30px!important;padding:3px 9px!important;border-radius:8px!important;font-size:11px!important;line-height:1.2!important}}
