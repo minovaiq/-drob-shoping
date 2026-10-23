@@ -2,6 +2,7 @@
 const API='https://zffrjanlvvlqhsdfazhb.supabase.co/rest/v1/store_banners?select=id,title,image_url,link_url&is_active=eq.true&order=sort_order.asc,created_at.desc';
 const KEY='sb_publishable_V_UUDQPgPj-YyhnY5H0dLA_TePGowGN';
 const fallback=[
+{image_url:'https://zffrjanlvvlqhsdfazhb.supabase.co/storage/v1/object/public/product-images/banners/f6a839fa-eb75-4303-869c-08ca997d00e0.jpg',link_url:null},
 {image_url:'https://zffrjanlvvlqhsdfazhb.supabase.co/storage/v1/object/public/product-images/banners/e97d36dd-967d-4dd4-8fb5-68a701ce3b80.webp',link_url:null},
 {image_url:'https://zffrjanlvvlqhsdfazhb.supabase.co/storage/v1/object/public/product-images/banners/a08fb06a-8538-4800-803e-5f8291d41442.jpg',link_url:'?product=a0cef1d6-144b-4f9c-9be2-b96811f78065'},
 {image_url:'https://zffrjanlvvlqhsdfazhb.supabase.co/storage/v1/object/public/product-images/banners/9759850a-0c0d-4287-83fa-41f39222ecfa.jpg',link_url:'?product=dfd0e598-1f21-4dd5-98e5-591801d79499'}];
