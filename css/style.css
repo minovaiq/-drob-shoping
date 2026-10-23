@@ -424,3 +424,8 @@ footer.store-footer #storeSocial a svg .solid{fill:currentColor;stroke:none}
 #categorySection .categories button{min-height:40px;padding:7px 10px;border-radius:9px;font-size:12px;line-height:1.35}
 @media(max-width:780px){#categorySection .categories button{min-height:38px;padding:6px 8px;font-size:11px}}
 @media(max-width:480px){#categorySection .categories button{min-height:36px;padding:6px;font-size:10px}}
+
+/* Single-row horizontally scrollable category strip */
+#categorySection .categories{display:flex!important;flex-wrap:nowrap!important;grid-template-columns:none!important;gap:8px!important;overflow-x:auto!important;overflow-y:hidden;scrollbar-width:thin;scroll-snap-type:x proximity;padding:4px 2px 10px!important;-webkit-overflow-scrolling:touch}
+#categorySection .categories button{flex:0 0 auto!important;width:auto!important;min-width:110px;max-width:230px;min-height:38px!important;padding:8px 14px!important;white-space:nowrap!important;scroll-snap-align:start}
+@media(max-width:480px){#categorySection .categories button{min-width:96px;min-height:34px!important;padding:7px 11px!important;font-size:11px!important}}
