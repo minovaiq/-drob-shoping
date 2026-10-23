@@ -407,3 +407,14 @@ footer.store-footer #storeSocial a:hover{background:#ec7728;color:#fff;transform
 footer.store-footer .footer-copyright{grid-column:auto;border:0!important;padding:27px 0 0!important;text-align:center!important;color:#8d9ab0;font-size:13px;width:100%;margin:0}
 @media(max-width:780px){footer.store-footer .footer-inner{padding-top:45px!important}footer.store-footer .footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 25px}footer.store-footer .footer-brand{grid-column:1/-1}}
 @media(max-width:480px){footer.store-footer .footer-main{grid-template-columns:1fr 1fr;gap:32px 16px}footer.store-footer .footer-brand{grid-column:1/-1}footer.store-footer .footer-logo{font-size:27px}footer.store-footer .footer-brand p{font-size:14px}footer.store-footer .footer-col h3{font-size:15px}footer.store-footer .footer-col a,footer.store-footer #storeContact p{font-size:13px}footer.store-footer .footer-social-section{margin-top:30px;padding-top:30px}footer.store-footer .footer-social-section h3{font-size:16px}}
+
+/* Contact details: uniform inline typography and authentic SVG social icons */
+footer.store-footer #storeContact{display:flex;flex-direction:column;gap:13px}
+footer.store-footer #storeContact p{display:flex;align-items:baseline;justify-content:flex-start;flex-wrap:wrap;gap:6px;margin:0!important;text-align:right!important;color:#cbd4e1!important;font-size:15px!important;line-height:1.9}
+footer.store-footer #storeContact .contact-label{font-size:inherit!important;font-weight:500!important;color:inherit!important;display:inline!important}
+footer.store-footer #storeContact a{color:inherit!important;font-size:inherit!important;font-weight:500!important;direction:ltr;unicode-bidi:plaintext;text-decoration:none}
+footer.store-footer #storeContact a:hover{color:#fff!important}
+footer.store-footer #storeSocial a svg{width:23px;height:23px;display:block;fill:currentColor;stroke:none}
+footer.store-footer #storeSocial a[aria-label="إنستغرام"] svg,footer.store-footer #storeSocial a[aria-label="واتساب"] svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+footer.store-footer #storeSocial a svg .solid{fill:currentColor;stroke:none}
+@media(max-width:480px){footer.store-footer #storeContact p{font-size:13px!important}}
