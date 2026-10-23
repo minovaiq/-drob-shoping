@@ -418,3 +418,9 @@ footer.store-footer #storeSocial a svg{width:23px;height:23px;display:block;fill
 footer.store-footer #storeSocial a[aria-label="إنستغرام"] svg,footer.store-footer #storeSocial a[aria-label="واتساب"] svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 footer.store-footer #storeSocial a svg .solid{fill:currentColor;stroke:none}
 @media(max-width:480px){footer.store-footer #storeContact p{font-size:13px!important}}
+
+/* Compact category tiles: preserve desktop grid and responsive layout */
+#categorySection .categories{gap:8px}
+#categorySection .categories button{min-height:40px;padding:7px 10px;border-radius:9px;font-size:12px;line-height:1.35}
+@media(max-width:780px){#categorySection .categories button{min-height:38px;padding:6px 8px;font-size:11px}}
+@media(max-width:480px){#categorySection .categories button{min-height:36px;padding:6px;font-size:10px}}
