@@ -25,6 +25,8 @@
    if(banners.length>1){setInterval(()=>{if(!document.hidden&&holder.contains(link))show((current+1)%banners.length)},4500);dots.style.pointerEvents='auto';markers.forEach((dot,i)=>{dot.style.cursor='pointer';dot.addEventListener('click',()=>show(i))})}
   }catch(err){console.error('Storefront banner fetch failed:',err);console.warn('Keeping server-rendered banner fallback')}
  }
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(load,700),{once:true});
+ function setupFallbackDots(){const holder=document.getElementById('heroFeaturedCards');if(!holder)return;const second=holder.querySelector('.hero-static-slide-2');const buttons=[...holder.querySelectorAll('.hero-fallback-dot')];if(!second||buttons.length!==2)return;let index=0;const select=i=>{index=i;second.classList.remove('manual-slide-0','manual-slide-1');second.classList.add('manual-slide-'+i);buttons.forEach((b,j)=>b.classList.toggle('active',j===i))};buttons.forEach((b,i)=>b.addEventListener('click',()=>select(i)));setInterval(()=>{if(holder.contains(second)&&!document.hidden)select((index+1)%2)},4500)}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setupFallbackDots,{once:true});else setupFallbackDots();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(load,700),{once:true});
  else setTimeout(load,700);
 })();
