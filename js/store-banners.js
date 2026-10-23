@@ -7,7 +7,7 @@
    const response=await fetch(API,{headers:{apikey:KEY},cache:'no-store'});
    if(!response.ok)throw Error('HTTP '+response.status+': '+(await response.text()).slice(0,180));
    const banners=await response.json();
-   if(!Array.isArray(banners)||!banners.length){console.info('Storefront banners: no active banners');return}
+   if(!Array.isArray(banners)||!banners.length){console.info('Storefront banners: no active banners');holder.textContent='لا توجد بنرات مفعلة حالياً';return}
    let current=0;
    const img=document.createElement('img');img.className='hero-slide-image';img.loading='eager';img.decoding='async';
    const link=document.createElement('a');link.className='hero-slide-link';link.append(img);
@@ -20,10 +20,10 @@
     if(b.link_url){try{const url=new URL(b.link_url,location.href);if(['https:','http:'].includes(url.protocol)){link.href=url.href;link.style.pointerEvents='auto'}else{link.removeAttribute('href');link.style.pointerEvents='none'}}catch{link.removeAttribute('href');link.style.pointerEvents='none'}}else{link.removeAttribute('href');link.style.pointerEvents='none'}
     markers.forEach((dot,j)=>dot.classList.toggle('active',j===current));
    }
-   img.onerror=()=>console.error('Storefront banner image failed:',img.src);
+   img.onerror=()=>{console.error('Storefront banner image failed:',img.src);holder.textContent='تعذر تحميل صورة البنر. يرجى إبلاغ الإدارة.'};img.onload=()=>{console.info('Banner image loaded',img.naturalWidth,img.naturalHeight)};
    show(0);
    if(banners.length>1&&!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{if(!document.hidden&&holder.contains(link))show((current+1)%banners.length)},4500);
-  }catch(err){console.error('Storefront banner fetch failed:',err)}
+  }catch(err){console.error('Storefront banner fetch failed:',err);holder.textContent='تعذر جلب البنرات: '+err.message}
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(load,700),{once:true});
  else setTimeout(load,700);
