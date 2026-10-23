@@ -356,3 +356,13 @@ button.quick-submit,button.cta,button[type='submit']:not(.add){border-radius:10p
 @keyframes bannerFirst{0%,44%{opacity:1;visibility:visible}50%,94%{opacity:0;visibility:hidden}100%{opacity:1;visibility:visible}}
 @keyframes bannerSecond{0%,44%{opacity:0;visibility:hidden}50%,94%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
 @media(prefers-reduced-motion:reduce){#heroFeaturedCards:has(>.hero-static-slide-2)>.hero-slide-link:first-child{animation:none!important}#heroFeaturedCards>.hero-static-slide-2{animation:none!important;display:none!important}}
+
+#heroFeaturedCards>.hero-fallback-dots{position:absolute!important;bottom:14px;left:50%;transform:translateX(-50%);z-index:8;display:flex;gap:9px;align-items:center;justify-content:center}
+#heroFeaturedCards .hero-fallback-dot{width:10px;height:10px;min-width:10px;border-radius:50%;border:1px solid #fff;background:#ffffff88;box-shadow:0 1px 5px #0006;padding:0;cursor:pointer;transition:background .2s,transform .2s}
+#heroFeaturedCards .hero-fallback-dot.active{background:white;transform:scale(1.25)}
+#heroFeaturedCards:has(>.hero-static-slide-2.manual-slide-0)>.hero-slide-link:first-child,#heroFeaturedCards:has(>.hero-static-slide-2.manual-slide-1)>.hero-slide-link:first-child{animation:none!important}
+#heroFeaturedCards>.hero-static-slide-2.manual-slide-0,#heroFeaturedCards>.hero-static-slide-2.manual-slide-1{animation:none!important}
+#heroFeaturedCards:has(>.manual-slide-0)>.hero-slide-link:first-child{opacity:1!important;visibility:visible!important}
+#heroFeaturedCards>.hero-static-slide-2.manual-slide-0{opacity:0!important;visibility:hidden!important}
+#heroFeaturedCards:has(>.manual-slide-1)>.hero-slide-link:first-child{opacity:0!important;visibility:hidden!important}
+#heroFeaturedCards>.hero-static-slide-2.manual-slide-1{opacity:1!important;visibility:visible!important}
