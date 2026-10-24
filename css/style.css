@@ -522,3 +522,17 @@ body{font-size:var(--store-text);line-height:1.6}
 #products .grid .product-price-row{margin-top:auto!important;min-height:32px!important;flex:0 0 32px!important}
 @media(max-width:600px){#products .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;justify-content:stretch!important;gap:9px!important}#products .grid .product{max-width:none!important;height:236px!important;min-height:236px!important;max-height:236px!important}#products .grid .art{height:145px!important;min-height:145px!important;max-height:145px!important;flex-basis:145px!important}#products .grid .info{height:91px!important;min-height:91px!important;max-height:91px!important;flex-basis:91px!important;padding:7px 8px!important}#products .grid .info h3{height:32px!important;min-height:32px!important;max-height:32px!important;line-height:16px!important;font-size:11px!important}#products .grid .product-price-row{min-height:28px!important;flex-basis:28px!important}}
 @media(max-width:370px){#products .grid .product{height:218px!important;min-height:218px!important;max-height:218px!important}#products .grid .art{height:132px!important;min-height:132px!important;max-height:132px!important;flex-basis:132px!important}#products .grid .info{height:86px!important;min-height:86px!important;max-height:86px!important;flex-basis:86px!important}}
+
+/* Three compact product cards per row on mobile */
+@media(max-width:600px){
+ #products .grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;align-items:start!important;justify-content:stretch!important}
+ #products .grid .product{width:100%!important;max-width:none!important;min-width:0!important;height:205px!important;min-height:205px!important;max-height:205px!important;border-radius:9px!important;overflow:hidden!important}
+ #products .grid .art{height:125px!important;min-height:125px!important;max-height:125px!important;flex:0 0 125px!important;aspect-ratio:auto!important;background:#f8f8f8!important}
+ #products .grid .art img{height:100%!important;width:100%!important;object-fit:contain!important;object-position:center!important}
+ #products .grid .info{height:80px!important;min-height:80px!important;max-height:80px!important;flex:0 0 80px!important;padding:5px 5px 6px!important;gap:2px!important}
+ #products .grid .info h3{height:29px!important;min-height:29px!important;max-height:29px!important;font-size:10px!important;line-height:14.5px!important;overflow:hidden!important;-webkit-line-clamp:2!important;line-clamp:2!important}
+ #products .grid .product-price-row{min-height:26px!important;flex:0 0 26px!important;gap:3px!important}
+ #products .grid .product-price-row .price{font-size:10px!important;line-height:1.2!important;letter-spacing:-.35px!important;white-space:nowrap!important}
+ #products .grid .product-price-row .add{flex:0 0 26px!important;width:26px!important;height:26px!important;min-height:26px!important;max-width:26px!important;font-size:18px!important;border-radius:7px!important}
+}
+@media(max-width:370px){#products .grid{gap:5px!important}#products .grid .info{padding:5px 4px!important}#products .grid .product-price-row .price{font-size:9px!important}#products .grid .product-price-row .add{flex-basis:24px!important;width:24px!important;max-width:24px!important;height:24px!important;min-height:24px!important}}
