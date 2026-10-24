@@ -42,3 +42,11 @@
 #productEditDialog .supplier-product-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:9px 15px;border-radius:11px;font-weight:800;font-size:12px;text-decoration:none;background:#eef3ff;color:#2856a8;border:1px solid #dce6fa;white-space:nowrap}
 #productEditDialog .supplier-product-button:hover{background:#e1eaff}
 #productEditDialog .supplier-product-button[hidden]{display:none!important}
+
+/* Clean image gallery delete control: anchored inside each thumbnail */
+#productEditDialog #editImageList{display:flex;flex-wrap:wrap;gap:10px;padding:7px 3px 4px!important;align-items:flex-start}
+#productEditDialog .modal-image-tile{position:relative!important;display:block!important;flex:0 0 64px!important;width:64px!important;height:64px!important;border:1px solid #e5eaf2;border-radius:10px;background:#f8fafc;overflow:hidden!important;box-sizing:border-box}
+#productEditDialog .modal-image-tile img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;border-radius:9px!important}
+#productEditDialog .modal-image-tile button{position:absolute!important;top:4px!important;left:4px!important;right:auto!important;transform:none!important;display:grid!important;place-items:center!important;width:20px!important;height:20px!important;min-width:20px!important;min-height:20px!important;max-width:20px!important;max-height:20px!important;padding:0!important;margin:0!important;border:1px solid #fff!important;border-radius:6px!important;background:#c83d52!important;color:#fff!important;font-size:14px!important;font-weight:700!important;line-height:1!important;box-shadow:0 1px 5px #0002!important;cursor:pointer;z-index:1}
+#productEditDialog .modal-image-tile button:hover{background:#a92139!important}
+#productEditDialog .modal-image-tile button:focus-visible{outline:2px solid #f26b1c;outline-offset:1px}
