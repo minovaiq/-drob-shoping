@@ -465,3 +465,10 @@ body{font-size:var(--store-text);line-height:1.6}
 
 /* Compact latest-sort filter on phones */
 @media(max-width:600px){#products .catalog-tools{gap:8px;min-height:0;margin:0 0 10px;flex-wrap:nowrap}#products .catalog-tools>span{font-size:11px;max-width:55%;line-height:1.4}#products .catalog-actions{gap:0;flex:0 0 auto}#products .catalog-actions label{display:none}#products #sortProducts{width:auto!important;min-width:85px!important;max-width:115px!important;min-height:30px!important;height:30px!important;padding:3px 9px!important;border-radius:8px!important;font-size:11px!important;line-height:1.2!important}}
+
+/* Minimal text-only category navigation */
+#categorySection .categories{align-items:center;gap:18px!important;padding:6px 2px 10px!important}
+#categorySection .categories button,#categorySection .categories button:nth-child(3n){background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important;border-radius:0!important;min-width:0!important;max-width:none!important;width:auto!important;min-height:32px!important;padding:5px 1px!important;color:#333d4d!important;font-weight:700!important;transition:color .18s ease!important}
+#categorySection .categories button:hover,#categorySection .categories button.active,#categorySection .categories button.active:hover{background:transparent!important;border:0!important;box-shadow:none!important;color:#f26b1c!important;transform:none!important}
+#categorySection .categories button:focus-visible{outline:2px solid #f26b1c;outline-offset:3px;border-radius:3px!important}
+@media(max-width:480px){#categorySection .categories{gap:15px!important}#categorySection .categories button{min-height:30px!important;padding:4px 0!important;font-size:12px!important}}
