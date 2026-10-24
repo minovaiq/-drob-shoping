@@ -501,3 +501,13 @@ body{font-size:var(--store-text);line-height:1.6}
 #products .grid .product-price-row .add{flex:0 0 32px!important;width:32px!important;height:32px!important;min-height:32px!important;max-width:32px!important;padding:0!important;margin:0!important;display:grid!important;place-items:center!important;font-size:22px!important;font-weight:500!important;line-height:1!important;border-radius:9px!important;background:#fff0e6!important;color:#ef6b20!important;border:0!important;box-shadow:none!important}
 #products .grid .product-price-row .add:disabled{font-size:10px!important;background:#f2f2f2!important;color:#999!important}
 @media(max-width:600px){#products .grid .info{padding:6px 7px 7px!important;gap:5px!important}#products .grid .info h3{font-size:11px!important;line-height:1.35!important;max-height:2.7em!important}#products .grid .product-price-row .price{font-size:12px!important;letter-spacing:-.2px!important}#products .grid .product-price-row .add{flex-basis:28px!important;width:28px!important;height:28px!important;min-height:28px!important;max-width:28px!important;font-size:20px!important;border-radius:8px!important}}
+
+/* Balanced compact catalog: prevent stretched cards and oversized photos */
+#products .grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(170px,205px))!important;justify-content:center!important;align-items:start!important;gap:12px!important}
+#products .grid .product{width:100%!important;max-width:205px!important;min-width:0!important;height:auto!important;align-self:start!important;justify-self:center!important;grid-row:auto!important}
+#products .grid .art{width:100%!important;height:auto!important;aspect-ratio:1.18/1!important;min-height:0!important;max-height:none!important;overflow:hidden!important}
+#products .grid .art img{width:100%!important;height:100%!important;object-fit:contain!important}
+#products .grid .info{flex:0 0 auto!important;min-height:0!important;height:auto!important;padding:7px 8px!important;gap:5px!important}
+#products .grid .info h3{font-size:12px!important;line-height:1.35!important;min-height:0!important;max-height:2.7em!important}
+#products .grid .product-price-row{margin-top:1px!important}
+@media(max-width:600px){#products .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;justify-content:stretch!important;gap:9px!important}#products .grid .product{max-width:100%!important;align-self:start!important}#products .grid .art{aspect-ratio:1.2/1!important}#products .grid .info{padding:6px 7px!important;gap:4px!important}#products .grid .info h3{font-size:11px!important}}
